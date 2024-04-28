@@ -15,7 +15,7 @@ const gencompChoice = () => {
 const drawGame = () => {
   msg.innerText = "Game was Draw. Play Again!";
   msg.style.backgroundColor = "#081b31";
-  console.log("Game was Draw. Play Again!");
+  // console.log("Game was Draw. Play Again!");
 };
 const showWinner = (userWin, userChoice, compChoice) => {
   if (userWin) {
@@ -23,20 +23,20 @@ const showWinner = (userWin, userChoice, compChoice) => {
     msg.innerText = `You win ! Your ${userChoice} beats ${compChoice}`;
     msg.style.backgroundColor = "green";
     uesrScorenew.innerText = userScore;
-    console.log("user win");
+    // console.log("user win");
   } else {
     compScore++;
     msg.innerText = `You lose ! ${compChoice} beats your ${userChoice}`;
     msg.style.backgroundColor = "red";
     compScorenew.innerText = compScore;
-    console.log("computer win!");
+    // console.log("computer win! ");
   }
-};
+}; 
 
 const playGame = (userChoice) => {
-  console.log("userChoice = ", userChoice);
+  // console.log("userChoice = ", userChoice);
   const compChoice = gencompChoice();
-  console.log("computer Choice = ", compChoice);
+  // console.log("computer Choice = ", compChoice);
 
   if (userChoice === compChoice) {
     drawGame();
@@ -47,7 +47,7 @@ const playGame = (userChoice) => {
       userWin = compChoice === "paper" ? false : true;
     } else if (userChoice === "paper") {
       //rock, scissors
-      userWin = compChoice === "scissors" ? true : false;
+      userWin = compChoice === "scissors" ? false : true;
     } else {
       // rock, paper
       userWin = compChoice === "rock" ? false : true;
